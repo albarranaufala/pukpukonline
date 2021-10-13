@@ -18,6 +18,10 @@ socket.on('pukpuk', ({ data }) => {
 
 const handleReceivePukpuk = () => {
     const pukpuks = document.getElementById('pukpuks');
-    pukpuks.innerHTML += `<li>pukpuk</li>`;
+    if (pukpuks.innerText === 'Belum puk puk') {
+        pukpuks.innerHTML = '<li class="my-2 font-bold text-2xl text-center">Puk puk puk</li>';
+    } else {
+        pukpuks.innerHTML = '<li class="my-2 font-bold text-2xl text-center">Puk puk puk</li>' + pukpuks.innerHTML;
+    }
     pukpuk();
 }
