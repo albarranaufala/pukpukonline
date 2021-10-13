@@ -4,7 +4,7 @@ const pukpukButton = document.getElementById('pukpukButton');
 
 const pukpuk = () => {
     console.log('puk puk');
-    const duration = 100;
+    const duration = 200;
     navigator.vibrate(duration);
 }
 
