@@ -1,4 +1,5 @@
-const socket = io('https://pukpuk-api.herokuapp.com');
+// const socket = io('https://pukpuk-api.herokuapp.com');
+const socket = io('http://localhost:3000');
 
 const pukpukButton = document.getElementById('pukpukButton');
 
@@ -18,20 +19,28 @@ const pukpuk = async () => {
 }
 
 const handleSubmitPukpuk = () => {
-    socket.emit('pukpuk', { data: true });
+    const pukpukSenderInput = document.getElementById('pukpukSender');
+    let sender = pukpukSenderInput.value
+    if (!sender) {
+        sender = 'Anonim'
+    }
+    socket.emit('pukpuk', { data: {
+        sender,
+        isPukpuk: true
+    } });
 }
 
 socket.on('pukpuk', ({ data }) => {
     handleReceivePukpuk(data);
 })
 
-const handleReceivePukpuk = () => {
+const handleReceivePukpuk = (data) => {
     pukpuk();
     const pukpuks = document.getElementById('pukpuks');
-    if (pukpuks.innerText === 'Belum puk puk') {
-        pukpuks.innerHTML = '<li class="my-2 font-bold text-2xl text-center">Puk puk puk</li>';
+    if (pukpuks.innerText === 'Belum ada puk puk') {
+        pukpuks.innerHTML = `<li class="my-2 font-bold text-center">Puk puk dari ${data.sender}</li>`;
     } else {
-        pukpuks.innerHTML = '<li class="my-2 font-bold text-2xl text-center">Puk puk puk</li>' + pukpuks.innerHTML;
+        pukpuks.innerHTML = `<li class="my-2 font-bold text-center">Puk puk dari ${data.sender}</li>` + pukpuks.innerHTML;
     }
 }
 

@@ -9,19 +9,25 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <main class="px-8 min-h-screen w-screen flex flex-col items-center bg-blue-100">
+    <main class="px-8 pb-8 min-h-screen w-screen flex flex-col items-center bg-blue-100">
+        <input
+            id="pukpukSender"
+            type="text"
+            placeholder="Masukkan nama Anda"
+            class="mt-16 w-full shadow-lg bg-white rounded-3xl px-8 py-4 text-xl font-bold text-center"
+        >
         <button
             id="pukpukButton"
             type="button"
             onclick="handleSubmitPukpuk()"
-            class="shadow-lg mt-16 p-8 bg-blue-600 rounded-full w-48 h-48 flex justify-center items-center"
+            class="shadow-lg mt-4 p-8 bg-blue-600 rounded-full w-48 h-48 flex justify-center items-center"
         >
             <svg width="124" height="110" viewBox="0 0 124 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M61.9994 47.2493C42.7673 47.2493 15.4994 76.9802 15.4994 95.7473C15.4994 104.2 21.9925 109.249 32.874 109.249C44.7024 109.249 52.5129 103.175 61.9994 103.175C71.5682 103.175 79.4006 109.249 91.1249 109.249C102.006 109.249 108.499 104.2 108.499 95.7473C108.499 76.9802 81.2315 47.2493 61.9994 47.2493ZM26.33 44.1953C23.8113 35.8035 16.0516 30.3688 8.99911 32.0544C1.9466 33.74 -1.72738 41.909 0.79137 50.3008C3.31012 58.6926 11.0698 64.1273 18.1223 62.4417C25.1748 60.7561 28.8488 52.5871 26.33 44.1953V44.1953ZM46.8482 39.1626C54.3415 37.1912 58.0905 27.0678 55.223 16.552C52.3555 6.03622 43.9565 -0.887922 36.4632 1.08348C28.9699 3.05489 25.2208 13.1783 28.0883 23.6941C30.9558 34.2099 39.3573 41.1365 46.8482 39.1626ZM114.997 32.0568C107.945 30.3712 100.188 35.8059 97.6664 44.1977C95.1476 52.5895 98.8216 60.7585 105.874 62.4441C112.927 64.1297 120.684 58.6951 123.205 50.3033C125.724 41.9115 122.05 33.7425 114.997 32.0568V32.0568ZM77.1507 39.1626C84.6439 41.134 93.043 34.2099 95.9105 23.6941C98.778 13.1783 95.029 3.05731 87.5357 1.08348C80.0424 -0.890343 71.6433 6.03622 68.7758 16.552C65.9083 27.0678 69.6574 37.1912 77.1507 39.1626V39.1626Z" fill="#93C5FD"/>
             </svg>
         </button>
-        <ul id="pukpuks" class="shadow-lg mt-8 bg-yellow-100 w-full rounded-3xl p-6 text-yellow-800">
-            <li class="my-2 font-bold text-2xl text-center">Belum puk puk</li>
+        <ul id="pukpuks" class="shadow-lg mt-8 bg-yellow-100 w-full rounded-3xl p-6 text-yellow-800 text-lg">
+            <li class="my-2 font-bold text-center text-gray-500"><i>Belum ada puk puk</i></li>
         </ul>
     </main>
 
