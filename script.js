@@ -1,5 +1,4 @@
-// const socket = io('https://pukpuk-api.herokuapp.com');
-const socket = io('http://localhost:3000');
+const socket = io('https://pukpuk-api.herokuapp.com');
 
 const pukpukButton = document.getElementById('pukpukButton');
 
